@@ -307,20 +307,20 @@ u8g2_uint_t u8g2_GetUTF8Width(u8g2_t *u8g2, const char *str);
     size_t write(uint8_t v) {
       uint16_t e = cpp_next_cb(&(u8g2.u8x8), v);
 
-      //Serial.println(e);
+      Serial.println(e);
 
       if ( e < 0x0fffe )
       {
-        // Serial.println("Entered if statement in write function");
-        // Serial.println("TX: ");
-        // Serial.println(tx);
-        // Serial.println("TY: ");
-        // Serial.println(ty);
-        // Serial.println("e: ");
-        // Serial.println(e);
+        Serial.println("Entered if statement in write function");
+        Serial.println("TX: ");
+        Serial.println(tx);
+        Serial.println("TY: ");
+        Serial.println(ty);
+        Serial.println("e: ");
+        Serial.println(e);
 	u8g2_uint_t delta = u8g2_DrawGlyph(&u8g2, tx, ty, e);
-    // Serial.println("Delta: ");
-    // Serial.println(delta);
+    Serial.println("Delta: ");
+    Serial.println(delta);
 
 #ifdef U8G2_WITH_FONT_ROTATION
 	switch(u8g2.font_decode.dir)
