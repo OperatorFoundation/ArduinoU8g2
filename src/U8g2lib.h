@@ -307,7 +307,7 @@ u8g2_uint_t u8g2_GetUTF8Width(u8g2_t *u8g2, const char *str);
     size_t write(uint8_t v) {
       uint16_t e = cpp_next_cb(&(u8g2.u8x8), v);
 
-      Serial.println(e);
+      //Serial.println(e);
 
       if ( e < 0x0fffe )
       {
