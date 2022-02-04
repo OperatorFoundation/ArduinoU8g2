@@ -1506,6 +1506,7 @@ uint8_t u8g2_IsGlyph(u8g2_t *u8g2, uint16_t requested_encoding);
 int8_t u8g2_GetGlyphWidth(u8g2_t *u8g2, uint16_t requested_encoding);
 u8g2_uint_t u8g2_DrawGlyph(u8g2_t *u8g2, u8g2_uint_t x, u8g2_uint_t y, uint16_t encoding);
 int8_t u8g2_GetStrX(u8g2_t *u8g2, const char *s);	/* for u8g compatibility */
+int8_t u8g2_font_decode_glyph(u8g2_t *u8g2, const uint8_t *glyph_data);
 
 void u8g2_SetFontDirection(u8g2_t *u8g2, uint8_t dir);
 u8g2_uint_t u8g2_DrawStr(u8g2_t *u8g2, u8g2_uint_t x, u8g2_uint_t y, const char *str);

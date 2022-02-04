@@ -54,9 +54,10 @@
 class U8G2 : public Print
 {
   protected:
-    u8g2_t u8g2;
     u8x8_char_cb cpp_next_cb; /*  the cpp interface has its own decoding function for the Arduino print command */
+  
   public:
+    u8g2_t u8g2;
     u8g2_uint_t tx, ty;
 
     U8G2(void) { cpp_next_cb = u8x8_ascii_next; home(); }
@@ -286,6 +287,7 @@ u8g2_uint_t u8g2_GetUTF8Width(u8g2_t *u8g2, const char *str);
     u8g2_uint_t drawUTF8(u8g2_uint_t x, u8g2_uint_t y, const char *s) { return u8g2_DrawUTF8(&u8g2, x, y, s); }
     u8g2_uint_t drawExtUTF8(u8g2_uint_t x, u8g2_uint_t y, uint8_t to_left, const uint16_t *kerning_table, const char *s)
       { return u8g2_DrawExtUTF8(&u8g2, x, y, to_left, kerning_table, s); }
+    int8_t decodeGlyph(const uint8_t *glyph_data)  { return u8g2_font_decode_glyph(&u8g2, glyph_data);}
 
 
     u8g2_uint_t getStrWidth(const char *s) { return u8g2_GetStrWidth(&u8g2, s); }
