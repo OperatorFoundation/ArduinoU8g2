@@ -288,6 +288,7 @@ u8g2_uint_t u8g2_GetUTF8Width(u8g2_t *u8g2, const char *str);
     u8g2_uint_t drawExtUTF8(u8g2_uint_t x, u8g2_uint_t y, uint8_t to_left, const uint16_t *kerning_table, const char *s)
       { return u8g2_DrawExtUTF8(&u8g2, x, y, to_left, kerning_table, s); }
     int8_t decodeGlyph(const uint8_t *glyph_data)  { return u8g2_font_decode_glyph(&u8g2, glyph_data);}
+    const uint8_t *fontGetGlyphData(u8g2_t *u8g2, uint16_t encoding) {return u8g2_font_get_glyph_data(u8g2, encoding);}
 
 
     u8g2_uint_t getStrWidth(const char *s) { return u8g2_GetStrWidth(&u8g2, s); }
